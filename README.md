@@ -28,5 +28,5 @@ The pipeline is designed as the following: after pre-processing the left and rig
 ## Note
 Due to the Github limitation, copy right and privacy protection, I will not provide the dataset or any sample input parameters.
 
-##Acknowledgement
+## Acknowledgement
 Thanks for Stephane VUJASINOVIC and Frederic UHRWEILLER provided the formula to calculate the distance from a disparity map. 
