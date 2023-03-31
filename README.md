@@ -1,8 +1,8 @@
-#Distance Estimation based on Stereo Cameras
+# Distance Estimation based on Stereo Cameras
 
 This project mainly perform how to use two cameras to perform stereo camera calibration and distance estimation
 
-##Introduction
+## Introduction
 
 **Goal** &emsp; Implement a pipeline estimating the distance to a fixed object of known distance using ROS bag files containing stereo images and two YAML files containing left and right cameras' parameters
 
@@ -17,15 +17,15 @@ This project mainly perform how to use two cameras to perform stereo camera cali
 
 **Output** &emsp; The estimated distance of the bounding box to camera.
 
-##Data
+## Data
 For this project, the database is a .bag file. It may contain multiple topics. However, this project only demands to read information from '/left/image raw/compressed' and '/right/image raw/compressed'. The images are stored as bytes string type. Hence, we need to convert it to .jpeg format. I use python function BytesIO to perform such conversion and use Pillow library to read the images.
 
 
-##Estimation Pipeline Design
+## Estimation Pipeline Design
 The pipeline is designed as the following: after pre-processing the left and right images, they are fed to the calibration algorithm. The calibration algorithm can perform stereo camera calibration. Usually we can use a chessboard as a reference to calibrate the camera, but in some cases we don't have a chessboard. Hence, in this project, I also provide the strategy using SIFT to perform stereo camera calibration. The calibration algorithm can compute the rotation matrix $R$ and the translation matrix $t$. Then we can use $R$ and $t$ to perform rectification algorithm. The rectificated images are used to generate the disparity map, and hence, we can estimate the distance. The graph of the pipeline is shown blow:
 <img src="pipeline.png" />
 
-##Note
+## Note
 Due to the Github limitation, copy right and privacy protection, I will not provide the dataset or any sample input parameters.
 
 ##Acknowledgement
